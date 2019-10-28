@@ -1,0 +1,17 @@
+body{
+ background-image:url(techstock.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+h1{
+ color: #5CFF33;
+text-shadow: 2px 2px 2px black;
+text-align: center;
+}
+h3{
+ color: #5CFF33;
+text-shadow: 2px 2px 2px black;
+text-align: center;
+}
