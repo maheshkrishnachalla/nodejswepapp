@@ -1,0 +1,18 @@
+stage('Build Docker Image'){
+        /* This build the docker image on the commnad line */
+        app = docker.build("mycodedocker/nodejswebapp:${env.BUILD_NUMBER}")
+    }
+    stage('Test Image'){
+        /* run the test framework to test the docker image*/
+        app.inside {
+            sh echo 'Tests passed' 
+        }
+    }
+    stgae('Push Image to Docker hub'){
+        /* push the docker image to the docker hud */
+        docker.withRegistry('https://registry.hub.docker.com','docker-hub'){
+            app.push()
+        }
+    }
+    
+}
