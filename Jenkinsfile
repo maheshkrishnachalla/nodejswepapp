@@ -20,7 +20,7 @@ node {
     
          stage('Docker Image push it docker-hub'){
     
-    docker.withRegistry('https://registry.hub.docker.com', 'dock-hub') {
+    docker.withRegistry('https://cloud.docker.com', 'dock-hub') {
         /* Push the container to the custom Registry */
         customImage.push()
     }
