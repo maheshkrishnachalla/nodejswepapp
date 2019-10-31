@@ -15,7 +15,7 @@ node {
 //         customImage= docker.build("mycodedocker/nodejswebapp:${env.BUILD_NUMBER}")
         sh 'docker build -t mycodedocker/nodejswebapp:2.0 .'
         
-    }
+   // }
         }
     
          stage('Docker Image push it docker-hub'){
