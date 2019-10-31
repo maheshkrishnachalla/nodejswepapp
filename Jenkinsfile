@@ -25,7 +25,7 @@ node {
          }
 	
 	stage('Run Container on server'){
-	sh "docker run -p 8081:8080 -d --name mynodeapp mycodedocker/nodejswebapp:${env.BUILD_NUMBER}"
+	sh "docker run -p 8082:8080 -d --name mynodeapp mycodedocker/nodejswebapp:${env.BUILD_NUMBER}"
 	}
 }
 
