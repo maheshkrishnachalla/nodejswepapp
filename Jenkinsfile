@@ -1,11 +1,19 @@
 node {
     
+	agent any
+	tools{nodejs "node"}
     stage('Clone repository'){
         /* Let us make sure repositroy cloned from github to workspace*/
         git credentialsId: 'github', url: 'https://github.com/maheshkrishnachalla/nodejswepapp.git'
 
     //checkout scm
     }
+	stage('Install dependencies){
+	sh 'npm install'
+}
+	stage('Test'){
+	sh 'npm test'
+}
 	def customImage
 
         stage('Build Docker Image '){
