@@ -13,7 +13,7 @@ node {
    // docker.withRegistry('https://registry.hub.docker.com', 'dock-hub') {
 
 //         customImage= docker.build("mycodedocker/nodejswebapp:${env.BUILD_NUMBER}")
-        sh 'docker build -t mycodedocker/nodejswebapp:2.0 .'
+        sh 'sudo docker build -t mycodedocker/nodejswebapp:2.0 .'
         
    // }
         }
