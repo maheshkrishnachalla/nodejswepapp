@@ -10,10 +10,10 @@ node {
 
         stage('Build Docker Image '){
     
-    docker.withRegistry('https://registry.hub.docker.com', 'dock-hub') {
+   // docker.withRegistry('https://registry.hub.docker.com', 'dock-hub') {
 
-         customImage= docker.build("mycodedocker/nodejswebapp:${env.BUILD_NUMBER}")
-
+//         customImage= docker.build("mycodedocker/nodejswebapp:${env.BUILD_NUMBER}")
+        sh 'docker build -t mycodedocker/nodejswebapp:2.0 .'
         
     }
         }
