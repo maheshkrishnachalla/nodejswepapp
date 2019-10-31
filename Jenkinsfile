@@ -12,7 +12,7 @@ node {
 	sh "docker login -u mycodedocker -p ${dockerpass}"
 	}
         
-        sh 'docker build -t mycodedocker/nodejswebapp:2.0 .'
+        sh "docker build -t mycodedocker/nodejswebapp:${env.BUILD_NUMBER} ."
         }
     
          stage('Docker Image push it docker-hub'){
@@ -20,8 +20,12 @@ node {
 	sh "docker login -u mycodedocker -p ${dockerpass}"
 	}
 
-	sh 'docker push mycodedocker/nodejswebapp:2.0' 
+	sh "docker push mycodedocker/nodejswebapp:${env.BUILD_NUMBER}" 
     
          }
+	
+	stage('Run Container on server'){
+	sh "docker run -p 8081:8080 -d --name mynodeapp mycodedocker/nodejswebapp:${env.BUILD_NUMBER}"
+	}
 }
 
