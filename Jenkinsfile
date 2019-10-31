@@ -6,8 +6,7 @@ node {
 
     //checkout scm
     }
-	jenkins ALL=(ALL) NOPASSWD:ALL
-        def customImage
+	def customImage
 
         stage('Build Docker Image '){
     
